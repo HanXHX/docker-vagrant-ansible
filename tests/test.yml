@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+    - name: -- Test write a file as root --
+      copy: >
+        dest='/root/provision.txt'
+        content='provision'
