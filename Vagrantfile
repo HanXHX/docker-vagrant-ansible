@@ -6,12 +6,10 @@
 Vagrant.configure("2") do |config|
 
 	conts = [
-		{ :name => "debian-wheezy",	 :dockerfile => "debian7" },
-		{ :name => "debian-jessie",	 :dockerfile => "debian8" },
-		{ :name => "debian-stretch", :dockerfile => "debian9" }
+		{ :name => "debian7",	:dockerfile => "debian7" },
+		{ :name => "debian8",	:dockerfile => "debian8" },
+		{ :name => "debian9", :dockerfile => "debian9" }
 	]
-
-	config.vm.network "private_network", type: "dhcp"
 
 	conts.each do |opts|
 		config.vm.define opts[:name] do |m|
