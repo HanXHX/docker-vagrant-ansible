@@ -14,9 +14,9 @@ services:
 language: python
 
 before_install:
-  - apt-get -qq update
-  - apt-get install -y --no-install-recommends vagrant build-essential python-pip python-dev libffi-dev libssl-dev
-  - pip install ansible
+  - sudo pt-get -qq update
+  - sudo pt-get install -y --no-install-recommends vagrant build-essential python-pip python-dev libffi-dev libssl-dev
+  - sudo ip install ansible
   - vagrant up $PLATFORM
   - vagrant provision $PLATFORM
 

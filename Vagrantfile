@@ -6,8 +6,8 @@
 Vagrant.configure("2") do |config|
 
 	conts = [
-		{ :name => "debian-wheezy",	:dockerfile => "debian7" },
-		{ :name => "debian-jessie",	:dockerfile => "debian8" },
+		{ :name => "debian-wheezy",	 :dockerfile => "debian7" },
+		{ :name => "debian-jessie",	 :dockerfile => "debian8" },
 		{ :name => "debian-stretch", :dockerfile => "debian9" }
 	]
 
@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
 				d.build_dir = "."
 				d.remains_running = true
 				d.has_ssh = true
-				d.dockerfile = opts[:dockerfile]
+				d.dockerfile = opts[:dockerfile] + "/Dockerfile"
 			end
 			m.vm.provision "ansible" do |ansible|
 				ansible.playbook = "tests/test.yml"
