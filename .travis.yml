@@ -16,8 +16,7 @@ language: python
 addons:
   apt:
     packages:
-      - virtualbox
-      - vagrant
+      - vagrant-lxc
       - build-essential
       - python-dev
       - libffi-dev
