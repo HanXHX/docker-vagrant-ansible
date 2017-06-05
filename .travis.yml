@@ -16,11 +16,14 @@ language: python
 addons:
   apt:
     packages:
-      - vagrant-lxc
       - build-essential
       - python-dev
       - libffi-dev
       - libssl-dev
+
+before_install:
+  - wget https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb
+  - sudo dpkg -i vagrant_1.9.5_x86_64.deb
 
 install:
   - pip install ansible
