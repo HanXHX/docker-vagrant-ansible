@@ -10,7 +10,7 @@ Supported OS
 
 * Debian 7 (Wheezy) : `docker pull hanxhx/vagrant-ansible:debian7`
 * Debian 8 (Jessie) : `docker pull hanxhx/vagrant-ansible:debian8`
-* Debian 9 (Strech) : `docker pull hanxhx/vagrant-ansible:debian9`
+* Debian 9 (Stretch) : `docker pull hanxhx/vagrant-ansible:debian9`
 
 Vagrantfile example
 -------------------
@@ -59,11 +59,11 @@ install:
   - pip install ansible
 
 script:
-  - vagrant up
+  - VAGRANT_DEFAULT_PROVIDER=docker vagrant up
   - >
-    vagrant provision $PLATFORM
+    VAGRANT_DEFAULT_PROVIDER=docker vagrant provision $PLATFORM
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-  - vagrant status
+  - VAGRANT_DEFAULT_PROVIDER=docker vagrant status
 ```
