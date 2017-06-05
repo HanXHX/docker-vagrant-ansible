@@ -1,0 +1,24 @@
+matrix:
+  include:
+    - env: PLATFORM=debian7
+    - env: PLATFORM=debian8
+    - env: PLATFORM=debian9
+
+sudo: required
+
+dist: trusty
+
+services:
+  - docker
+
+language: python
+
+before_install:
+  - apt-get -qq update
+  - apt-get install -y --no-install-recommends vagrant build-essential python-pip python-dev libffi-dev libssl-dev
+  - pip install ansible
+  - vagrant up $PLATFORM
+  - vagrant provision $PLATFORM
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
