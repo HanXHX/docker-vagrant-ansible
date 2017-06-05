@@ -16,6 +16,7 @@ language: python
 addons:
   apt:
     packages:
+      - virtualbox
       - vagrant
       - build-essential
       - python-dev
@@ -27,8 +28,5 @@ install:
 
 script:
   - vagrant status
-  - vagrant up --provider docker $PLATFORM
+  - vagrant up $PLATFORM
   - vagrant status
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
