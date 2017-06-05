@@ -6,9 +6,9 @@
 Vagrant.configure("2") do |config|
 
 	conts = [
-		{ :name => "debian-wheezy",	:dockerfile => "Debian-7-Wheezy/Dockerfile" },
-		{ :name => "debian-jessie",	:dockerfile => "Debian-8-Jessie/Dockerfile" },
-		{ :name => "debian-stretch", :dockerfile => "Debian-9-Stretch/Dockerfile" }
+		{ :name => "debian-wheezy",	:dockerfile => "debian7" },
+		{ :name => "debian-jessie",	:dockerfile => "debian8" },
+		{ :name => "debian-stretch", :dockerfile => "debian9" }
 	]
 
 	config.vm.network "private_network", type: "dhcp"
