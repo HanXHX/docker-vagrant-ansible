@@ -13,12 +13,22 @@ services:
 
 language: python
 
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y --no-install-recommends vagrant build-essential python-pip python-dev libffi-dev libssl-dev
-  - sudo pip install ansible
+addons:
+  apt:
+    packages:
+      - vagrant
+      - build-essential
+      - python-dev
+      - libffi-dev
+      - libssl-dev
+
+install:
+  - pip install ansible
+
+script:
   - vagrant up $PLATFORM
   - vagrant provision $PLATFORM
+  - vagrant status
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
