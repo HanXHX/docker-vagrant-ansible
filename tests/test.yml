@@ -6,3 +6,5 @@
       copy: >
         dest='/root/provision.txt'
         content='provision'
+    - name: -- Test install package --
+      apt: pkg=htop
