@@ -3,6 +3,8 @@ matrix:
     - env: PLATFORM=debian7
     - env: PLATFORM=debian8
     - env: PLATFORM=debian9
+    - env: PLATFORM=ubuntu16.04
+    - env: PLATFORM=ubuntu18.04
 
 sudo: required
 
