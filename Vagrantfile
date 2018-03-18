@@ -17,10 +17,9 @@ Vagrant.configure("2") do |config|
     config.vm.define opts[:name] do |m|
       m.vm.provider "docker" do |d|
         d.image = opts[:image]
-        d.build_dir = "."
+        d.build_dir = opts[:dockerfile]
         d.remains_running = true
         d.has_ssh = true
-        d.dockerfile = opts[:dockerfile] + "/Dockerfile"
       end
       m.vm.provision "ansible" do |ansible|
         ansible.playbook = "tests/test.yml"
