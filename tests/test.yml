@@ -3,8 +3,9 @@
 - hosts: all
   tasks:
     - name: -- Test write a file as root --
-      copy: >
-        dest='/root/provision.txt'
-        content='provision'
+      copy:
+        dest: '/root/provision.txt'
+        content: 'provision'
     - name: -- Test install package --
-      apt: pkg=htop
+      apt:
+        pkg: htop
