@@ -11,6 +11,7 @@ Supported OS
 * Debian 7 (Wheezy) : `docker pull hanxhx/vagrant-ansible:debian7`
 * Debian 8 (Jessie) : `docker pull hanxhx/vagrant-ansible:debian8`
 * Debian 9 (Stretch) : `docker pull hanxhx/vagrant-ansible:debian9`
+* Debian 10 (Buster) : `docker pull hanxhx/vagrant-ansible:debian10`
 * Ubuntu 16.04 (Xenial) : `docker pull hanxhx/vagrant-ansible:ubuntu16.04`
 * Ubuntu 18.04 (Bionic) : `docker pull hanxhx/vagrant-ansible:ubuntu18.04`
 
