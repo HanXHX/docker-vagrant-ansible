@@ -1,6 +1,5 @@
 matrix:
   include:
-    - env: PLATFORM=debian7
     - env: PLATFORM=debian8
     - env: PLATFORM=debian9
     - env: PLATFORM=debian10
