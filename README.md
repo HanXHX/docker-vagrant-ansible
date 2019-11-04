@@ -8,7 +8,6 @@ Provides docker containers for Vagrant + Ansible.
 Supported OS
 ------------
 
-* Debian 7 (Wheezy) : `docker pull hanxhx/vagrant-ansible:debian7`
 * Debian 8 (Jessie) : `docker pull hanxhx/vagrant-ansible:debian8`
 * Debian 9 (Stretch) : `docker pull hanxhx/vagrant-ansible:debian9`
 * Debian 10 (Buster) : `docker pull hanxhx/vagrant-ansible:debian10`
