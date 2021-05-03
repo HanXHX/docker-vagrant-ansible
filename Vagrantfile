@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     { :name => "debian8",     :dockerfile => "debian8"     },
     { :name => "debian9",     :dockerfile => "debian9"     },
     { :name => "debian10",    :dockerfile => "debian10"    },
+    { :name => "debian11",    :dockerfile => "debian11"    },
     { :name => "ubuntu16.04", :dockerfile => "ubuntu16.04" },
     { :name => "ubuntu18.04", :dockerfile => "ubuntu18.04" },
   ]
