@@ -3,6 +3,7 @@ matrix:
     - env: PLATFORM=debian8
     - env: PLATFORM=debian9
     - env: PLATFORM=debian10
+    - env: PLATFORM=debian11
     - env: PLATFORM=ubuntu16.04
     - env: PLATFORM=ubuntu18.04
 
