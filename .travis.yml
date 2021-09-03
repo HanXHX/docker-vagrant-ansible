@@ -4,7 +4,6 @@ env:
   global:
     - VAGRANT_VERSION='2.2.18'
   jobs:
-    - PLATFORM=debian7
     - PLATFORM=debian8
     - PLATFORM=debian9
     - PLATFORM=debian10

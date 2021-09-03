@@ -6,7 +6,6 @@
 Vagrant.configure("2") do |config|
 
   conts = [
-    { :name => "debian7",     :dockerfile => "debian7"     },
     { :name => "debian8",     :dockerfile => "debian8"     },
     { :name => "debian9",     :dockerfile => "debian9"     },
     { :name => "debian10",    :dockerfile => "debian10"    },
