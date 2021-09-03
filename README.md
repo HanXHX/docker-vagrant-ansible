@@ -1,7 +1,7 @@
 Docker Vagrant Ansible
 ======================
 
-[![Build Status](https://travis-ci.org/HanXHX/docker-vagrant-ansible.svg?branch=master)](https://travis-ci.org/HanXHX/docker-vagrant-ansible)
+[![Build Status](https://app.travis-ci.com/HanXHX/docker-vagrant-ansible.svg?branch=master)](https://app.travis-ci.com/HanXHX/docker-vagrant-ansible)
 
 Provides docker containers for Vagrant + Ansible.
 
