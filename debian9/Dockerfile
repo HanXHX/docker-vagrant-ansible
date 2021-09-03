@@ -1,4 +1,4 @@
-FROM bitnami/minideb:stretch
+FROM debian:stretch-slim
 EXPOSE 22
 
 COPY run.sh /root/run.sh

@@ -2,7 +2,10 @@
 
 set -e
 
-install_packages sudo openssh-server python3 wget ca-certificates
+apt-get update -qq
+apt-get install -y --no-install-recommends sudo openssh-server python3 wget ca-certificates
+rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 mkdir -p /var/run/sshd && chmod 0755 /var/run/sshd
 echo 'UseDNS no' >> /etc/ssh/sshd_config
 

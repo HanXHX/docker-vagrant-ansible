@@ -1,4 +1,4 @@
-FROM bitnami/minideb:jessie
+FROM debian:jessie-slim
 EXPOSE 22
 
 COPY run.sh /root/run.sh
