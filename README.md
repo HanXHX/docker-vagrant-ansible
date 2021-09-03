@@ -14,6 +14,7 @@ Supported OS
 * Debian 11 (Bullseye) : `docker pull hanxhx/vagrant-ansible:debian11`
 * Ubuntu 16.04 (Xenial) : `docker pull hanxhx/vagrant-ansible:ubuntu16.04`
 * Ubuntu 18.04 (Bionic) : `docker pull hanxhx/vagrant-ansible:ubuntu18.04`
+* Ubuntu 20.04 (Bionic) : `docker pull hanxhx/vagrant-ansible:ubuntu20.04`
 
 Vagrantfile example
 -------------------
@@ -37,31 +38,39 @@ Travis-CI example
 -----------------
 
 ```yaml
+---
+
 env:
-  - PLATFORM='docker-debian9'
+  global:
+    - VAGRANT_VERSION='2.2.18'
+  jobs:
+    - PLATFORM='docker-debian9' ANSIBLE_VERSION='>=2.11,<2.12'
 
-sudo: required
+os:
+  - linux
+dist: focal
 
-dist: trusty
+language: python
+python:
+  - 3.8
 
 services:
   - docker
 
-language: python
-
 before_install:
-  - wget https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-  - sudo dpkg -i vagrant_2.0.1_x86_64.deb
+  - sudo apt-get -q update
+  - sudo wget -nv https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 
 install:
-  - pip install ansible
+  - sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
+  - sudo pip install "ansible-core${ANSIBLE_VERSION}"
 
 script:
-  - VAGRANT_DEFAULT_PROVIDER=docker vagrant up
+  - vagrant up $PLATFORM
   - >
-    VAGRANT_DEFAULT_PROVIDER=docker vagrant provision $PLATFORM
+    vagrant provision $PLATFORM
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-  - VAGRANT_DEFAULT_PROVIDER=docker vagrant status
+  - vagrant status
 ```
