@@ -3,7 +3,7 @@
 set -e
 
 apt-get update -qq
-apt-get install -y --no-install-recommends sudo openssh-server python wget ca-certificates
+apt-get install -y --no-install-recommends sudo openssh-server python3 wget ca-certificates
 rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 mkdir -p /var/run/sshd && chmod 0755 /var/run/sshd

@@ -30,7 +30,7 @@ rm -r /var/lib/apt/lists /var/cache/apt/archives
 EOF
 chmod 0755 "/usr/sbin/install_packages"
 
-install_packages sudo openssh-server python wget ca-certificates
+install_packages sudo openssh-server python3 wget ca-certificates
 mkdir -p /var/run/sshd && chmod 0755 /var/run/sshd
 echo 'UseDNS no' >> /etc/ssh/sshd_config
 

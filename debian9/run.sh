@@ -2,7 +2,7 @@
 
 set -e
 
-install_packages sudo openssh-server python wget ca-certificates
+install_packages sudo openssh-server python3 wget ca-certificates
 mkdir -p /var/run/sshd && chmod 0755 /var/run/sshd
 echo 'UseDNS no' >> /etc/ssh/sshd_config
 
