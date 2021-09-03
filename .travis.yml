@@ -10,6 +10,7 @@ env:
     - PLATFORM=debian11
     - PLATFORM=ubuntu16.04
     - PLATFORM=ubuntu18.04
+    - PLATFORM=ubuntu20.04
 
 os:
   - linux
