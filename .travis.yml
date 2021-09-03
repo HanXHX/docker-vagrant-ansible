@@ -1,35 +1,35 @@
-matrix:
-  include:
-    - env: PLATFORM=debian8
-    - env: PLATFORM=debian9
-    - env: PLATFORM=debian10
-    - env: PLATFORM=debian11
-    - env: PLATFORM=ubuntu16.04
-    - env: PLATFORM=ubuntu18.04
+---
 
-sudo: required
+env:
+  global:
+    - VAGRANT_VERSION='2.2.18'
+  jobs:
+    - PLATFORM=debian7
+    - PLATFORM=debian8
+    - PLATFORM=debian9
+    - PLATFORM=debian10
+    - PLATFORM=debian11
+    - PLATFORM=ubuntu16.04
+    - PLATFORM=ubuntu18.04
 
-dist: trusty
+os:
+  - linux
+dist: focal
+
+language: python
+python:
+  - 3.8
 
 services:
   - docker
 
-language: python
-
-addons:
-  apt:
-    packages:
-      - build-essential
-      - python-dev
-      - libffi-dev
-      - libssl-dev
-
 before_install:
-  - wget https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-  - sudo dpkg -i vagrant_2.0.1_x86_64.deb
+  - sudo apt-get -q update
+  - sudo wget -nv https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
 
 install:
-  - pip install ansible
+  - sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
+  - sudo pip install ansible
 
 script:
   - vagrant status
