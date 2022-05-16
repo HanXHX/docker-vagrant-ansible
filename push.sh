@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE_IMG="hanxhx/vagrant-ansible"
-TAGS="debian8 debian9 debian10 debian11 ubuntu16.04 ubuntu18.04 ubuntu20.04"
+TAGS="debian8 debian9 debian10 debian11 ubuntu16.04 ubuntu18.04 ubuntu20.04 ubuntu22.04"
 
 rm -f ./docker-compose.yml
 echo -e "---\n" > docker-compose.yml

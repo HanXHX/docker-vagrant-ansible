@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     { :name => "ubuntu16.04", :dockerfile => "ubuntu16.04" },
     { :name => "ubuntu18.04", :dockerfile => "ubuntu18.04" },
     { :name => "ubuntu20.04", :dockerfile => "ubuntu20.04" },
+    { :name => "ubuntu22.04", :dockerfile => "ubuntu22.04" },
   ]
 
   conts.each do |opts|

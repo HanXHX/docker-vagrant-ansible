@@ -14,7 +14,8 @@ Supported OS
 * Debian 11 (Bullseye) : `docker pull hanxhx/vagrant-ansible:debian11`
 * Ubuntu 16.04 (Xenial) : `docker pull hanxhx/vagrant-ansible:ubuntu16.04`
 * Ubuntu 18.04 (Bionic) : `docker pull hanxhx/vagrant-ansible:ubuntu18.04`
-* Ubuntu 20.04 (Bionic) : `docker pull hanxhx/vagrant-ansible:ubuntu20.04`
+* Ubuntu 20.04 (Focal) : `docker pull hanxhx/vagrant-ansible:ubuntu20.04`
+* Ubuntu 22.04 (Jammy) : `docker pull hanxhx/vagrant-ansible:ubuntu22.04`
 
 Vagrantfile example
 -------------------
